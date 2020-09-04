@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Ground
+  - Edge
+  - LadderTop
+  - Chest
+  - Missile
+  - Enemy
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Ground
+  - Player
+  - FieldOfView
+  - Enemy
+  - Climbable
+  - LadderTop
+  - Ladder
+  - LadderTopCheck
+  - Objects
+  - Creeping Darkness
+  - LadderTopGround
+  - EnemySight
+  - SewerCeiling
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - Targets
+  - Obstacles
+  m_SortingLayers:
+  - name: Parrallax
+    uniqueID: 2984464095
+    locked: 0
+  - name: Ground
+    uniqueID: 3476480463
+    locked: 0
+  - name: Buildings
+    uniqueID: 584405141
+    locked: 0
+  - name: Climbable
+    uniqueID: 1484227463
+    locked: 0
+  - name: Hideable Objects
+    uniqueID: 418848173
+    locked: 0
+  - name: Hideable
+    uniqueID: 3852204383
+    locked: 0
+  - name: Obstacle
+    uniqueID: 2900658975
+    locked: 0
+  - name: Door
+    uniqueID: 3910591083
+    locked: 0
+  - name: Player
+    uniqueID: 4018720963
+    locked: 0
+  - name: Enemy
+    uniqueID: 3545550943
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Creeping Darkness
+    uniqueID: 3350302137
+    locked: 0
