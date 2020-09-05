@@ -6,7 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/MainMenu-Escapethedarkness.unity
+    path: Assets/Scenes/Moonrift.unity
+    guid: 6265cbadce932df43946bf060a96e087
+  - enabled: 1
+    path: Assets/Scenes/MainMenu-Escapethedarkness.unity
     guid: 5596ed8a3ba108f47b6198d241c81b54
   - enabled: 1
     path: Assets/Scenes/Kyle's test scene good job.unity

@@ -89,6 +89,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject hitParticle = default;
     [SerializeField] private Transform spawnPoint = default;
     [SerializeField] private GameObject deathEffect = default;
+
+    [SerializeField] private ParticleSystem deathParticleSystem = default;
     #endregion
 
     #region Getter_Setters
@@ -409,8 +411,26 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            //SoundManager.PlaySound("Squashed");
+            deathParticleSystem.Play();
+            //Instantiate(jumpEffect, groundCheck.transform.position, jumpEffect.transform.rotation
+            //Instantiate(deathParticleSystem, GetPosition(), Quaternion.Euler(-90, 0, 0));
+            //this.gameObject.SetActive(false);
+            coll.enabled = false;
+            sr.enabled = false;
+            rb.constraints = RigidbodyConstraints2D.FreezePositionY| RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+            StartCoroutine(Death());
         }
+    }
+
+    private IEnumerator Death()
+    {
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        sr.enabled = true;
+        coll.enabled = true;
+        rb.constraints = RigidbodyConstraints2D.None;
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
     public Vector3 GetPosition()

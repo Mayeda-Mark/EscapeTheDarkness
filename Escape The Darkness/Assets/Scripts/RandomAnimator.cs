@@ -29,5 +29,6 @@ public class RandomAnimator : MonoBehaviour
         yield return new WaitForSeconds(randomWait);
         anim.SetTrigger("play");
         playAnim = true;
+        
     }
 }
