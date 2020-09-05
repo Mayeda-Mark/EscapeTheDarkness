@@ -18,7 +18,7 @@ public class IdleState : IEnemyState
         enemy.FieldOfView.SetFoV(60f);
         enemy.FieldOfView.SetViewDistance(8f);
 
-        enemy.movementSpeed = 3;
+        enemy.movementSpeed = 4;
     }
 
     public void Execute()

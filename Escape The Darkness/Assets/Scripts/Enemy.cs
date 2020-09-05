@@ -49,7 +49,7 @@ public class Enemy : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         facingRight = true;
-        movementSpeed = 3;
+        movementSpeed = 4;
         Anim = GetComponent<Animator>();
 
         //fieldOfView = Instantiate(PrefabFieldOFView, null).GetComponent<FieldOfView>();

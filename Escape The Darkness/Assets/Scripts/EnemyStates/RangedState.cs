@@ -10,7 +10,7 @@ public class RangedState : IEnemyState
     public void Enter(Enemy _enemy)
     {
         this.enemy = _enemy;
-        enemy.movementSpeed = 5;
+        enemy.movementSpeed = 8;
     }
 
     public void Execute()
