@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 6
-  lastUpdatedAtString: 2020-09-05T10:12:45.941-07:00
-  initializedAtString: 2020-09-05T08:08:42.325-07:00
+  lastUpdatedAtString: 2020-09-06T07:23:38.473-07:00
+  initializedAtString: 2020-09-06T05:16:46.030-07:00
   entries:
   - path: Escape The Darkness\Assets\Scenes\Capitol_City.unity
     fullPath: C:\Users\markr\Development\Unity\Escape The Darkness\Escape The Darkness\Assets\Scenes\Capitol_City.unity
@@ -49882,6 +49882,18 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
+  - path: Escape The Darkness\Library\CurrentLayout-default.dwlt
+    fullPath: C:\Users\markr\Development\Unity\Escape The Darkness\Escape The Darkness\Library\CurrentLayout-default.dwlt
+    projectPath: Library\CurrentLayout-default.dwlt
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Escape The Darkness\Library\EditorInstance.json
+    fullPath: C:\Users\markr\Development\Unity\Escape The Darkness\Escape The Darkness\Library\EditorInstance.json
+    projectPath: Library\EditorInstance.json
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
   - path: Escape The Darkness\Library\expandedItems
     fullPath: C:\Users\markr\Development\Unity\Escape The Darkness\Escape The Darkness\Library\expandedItems
     projectPath: Library\expandedItems
@@ -49892,20 +49904,14 @@ MonoBehaviour:
     fullPath: C:\Users\markr\Development\Unity\Escape The Darkness\Escape The Darkness\Library\gfu\cache\branches.yaml
     projectPath: Library\gfu\cache\branches.yaml
     originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
+    indexStatus: 0
+    workTreeStatus: 3
   - path: Escape The Darkness\Library\gfu\cache\gitlocks.yaml
     fullPath: C:\Users\markr\Development\Unity\Escape The Darkness\Escape The Darkness\Library\gfu\cache\gitlocks.yaml
     projectPath: Library\gfu\cache\gitlocks.yaml
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Escape The Darkness\Library\gfu\cache\gitlog.yaml
-    fullPath: C:\Users\markr\Development\Unity\Escape The Darkness\Escape The Darkness\Library\gfu\cache\gitlog.yaml
-    projectPath: Library\gfu\cache\gitlog.yaml
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
   - path: Escape The Darkness\Library\gfu\cache\gitstatusentries.yaml
     fullPath: C:\Users\markr\Development\Unity\Escape The Darkness\Escape The Darkness\Library\gfu\cache\gitstatusentries.yaml
     projectPath: Library\gfu\cache\gitstatusentries.yaml
@@ -49915,6 +49921,24 @@ MonoBehaviour:
   - path: Escape The Darkness\Library\gfu\cache\gittrackingstatus.yaml
     fullPath: C:\Users\markr\Development\Unity\Escape The Darkness\Escape The Darkness\Library\gfu\cache\gittrackingstatus.yaml
     projectPath: Library\gfu\cache\gittrackingstatus.yaml
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Escape The Darkness\Library\gfu\cache\repoinfo.yaml
+    fullPath: C:\Users\markr\Development\Unity\Escape The Darkness\Escape The Darkness\Library\gfu\cache\repoinfo.yaml
+    projectPath: Library\gfu\cache\repoinfo.yaml
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Escape The Darkness\Library\GridBrush\UnityEditor.Tilemaps.GridBrush.asset
+    fullPath: C:\Users\markr\Development\Unity\Escape The Darkness\Escape The Darkness\Library\GridBrush\UnityEditor.Tilemaps.GridBrush.asset
+    projectPath: Library\GridBrush\UnityEditor.Tilemaps.GridBrush.asset
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Escape The Darkness\Library\SceneVisibilityState.asset
+    fullPath: C:\Users\markr\Development\Unity\Escape The Darkness\Escape The Darkness\Library\SceneVisibilityState.asset
+    projectPath: Library\SceneVisibilityState.asset
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
@@ -49963,12 +49987,6 @@ MonoBehaviour:
   - path: Escape The Darkness\Temp\UnityLockfile
     fullPath: C:\Users\markr\Development\Unity\Escape The Darkness\Escape The Darkness\Temp\UnityLockfile
     projectPath: Temp\UnityLockfile
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Escape The Darkness\Temp\Upload\Assets\Scenes\Capitol_City.unity
-    fullPath: C:\Users\markr\Development\Unity\Escape The Darkness\Escape The Darkness\Temp\Upload\Assets\Scenes\Capitol_City.unity
-    projectPath: Temp\Upload\Assets\Scenes\Capitol_City.unity
     originalPath: 
     indexStatus: 1
     workTreeStatus: 1
