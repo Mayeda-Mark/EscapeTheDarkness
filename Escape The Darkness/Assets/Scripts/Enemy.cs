@@ -1,39 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
     public enum AnimationState { IDLE, RUN, JUMP, FALL, HURT, CROUCH }
 
-    //[SerializeField] private Transform wayPointLeft = default;
-    //[SerializeField] private Transform wayPointRight = default;
-
     public AnimationState animationState;
 
     private IEnemyState currentState;
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
     private SpriteRenderer sr;
-    private bool facingRight;
-    public int movementSpeed;
-
-    public bool isFound;
-    public bool isInRange;
-
     public Vector2 startPosition;
 
     public Collider2D coll;
 
+    public int movementSpeed;
+
+    private bool facingRight;
+    public bool isFound;
+    public bool isInRange;
+   
     [SerializeField] private PlayerController player;
-    //[SerializeField] private Transform prefabFieldOFView;
-    //[SerializeField] private float fov = 40f;
-    //[SerializeField] private float viewDistance = 15f;
-
-    //[SerilaizedField] private Vector3 aimDirection;
     [SerializeField]private FieldOfView fieldOfView;
-
     [SerializeField] Transform rayCastPoistion;
-
     [SerializeField] private LayerMask target;
 
     public GameObject Target { get; set; }
@@ -42,6 +33,19 @@ public class Enemy : MonoBehaviour
 
     public FieldOfView FieldOfView { get => fieldOfView; set => fieldOfView = value; }
     //public Transform PrefabFieldOFView { get => prefabFieldOFView; set => prefabFieldOFView = value; }
+
+    public Transform combatTxtPosition = default;
+    //public TextMeshProUGUI healthTxt = default;
+
+
+    public HealthBar patrolBar;
+    public HealthBar idleBar;
+
+    //[SerializeField] private TextMeshProUGUI healthTxt = default;
+    //private int currentHealth;
+    //protected int maxHealth;
+
+    //private int layerMask = (LayerMask.GetMask("Player"));
 
     private void Start()
     {
@@ -58,9 +62,7 @@ public class Enemy : MonoBehaviour
 
         isFound = false;
         coll.enabled = false;
-
         startPosition = transform.position;
-
         Physics2D.queriesStartInColliders = false;
     }
 
@@ -72,14 +74,9 @@ public class Enemy : MonoBehaviour
 
         if (fieldOfView != null)
         {
-            //fieldOfView.SetOrigin(transform.position);
-            //fieldOfView.SetAimDirection(GetDirection());
-
             FieldOfView.SetOrigin(transform.position);
             FieldOfView.SetAimDirection(GetDirection());
         }
-
-        Debug.DrawLine(transform.position, transform.position + GetDirection() * 10f);
 
         FindTargetPlayer();
 
@@ -91,7 +88,6 @@ public class Enemy : MonoBehaviour
         if (!isFound)
         {
             coll.enabled = false;
-            //ChangeState(new IdleState());
         }
     }
 
@@ -100,16 +96,12 @@ public class Enemy : MonoBehaviour
         if (Vector3.Distance(GetPosition(), player.GetPosition()) < FieldOfView.viewDistance)
         {
             // Player inside ViewDistance
-            Debug.Log("Attack1");
-
-            Vector3 dirToPlayer = (player.GetPosition() - GetPosition()).normalized;
+            Vector3 dirToPlayer = (player.GetPosition() - GetPosition());// .normalized
 
             if (Vector3.Angle(GetDirection(), dirToPlayer) < FieldOfView.fov / 2f)// 
             {
                 //Player inside FieldOfView
-                Debug.Log("Attack2");
-
-                RaycastHit2D raycastHit2D = Physics2D.Raycast(rayCastPoistion.position, dirToPlayer, FieldOfView.viewDistance);
+                RaycastHit2D raycastHit2D = Physics2D.Raycast(rayCastPoistion.position, dirToPlayer, FieldOfView.viewDistance, target);
 
                 if (raycastHit2D.collider != null)
                 {
@@ -128,6 +120,23 @@ public class Enemy : MonoBehaviour
                     Debug.Log("NoAttack");
                 }
             }                     
+        }
+    }
+
+    public void MoveTowardsTarget()
+    {
+        if (isFound)
+        {
+            Vector3 dir = (Target.transform.position - transform.position).normalized;
+            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            rb.velocity = new Vector2(dir.x * movementSpeed, dir.y * movementSpeed);
+        }
+        else
+        {
+            Debug.Log("Why");
+            rb.velocity = new Vector2(0, 0);
+            transform.position = startPosition;
+            ChangeState(new IdleState());
         }
     }
 

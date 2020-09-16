@@ -17,6 +17,7 @@ public class SoundManager : MonoBehaviour
     public static AudioClip climb;
     public static AudioClip teleport;
     public static AudioClip squashed;
+    public static AudioClip death;
     #endregion
 
     void Start()
@@ -35,6 +36,7 @@ public class SoundManager : MonoBehaviour
         climb = Resources.Load<AudioClip>("Climb");
         teleport = Resources.Load<AudioClip>("Teleport");
         squashed = Resources.Load<AudioClip>("Squashed");
+        death = Resources.Load<AudioClip>("Death");
     }
 
     public static void PlaySound(string _clip)
@@ -87,6 +89,10 @@ public class SoundManager : MonoBehaviour
 
             case "Squashed":
                 audioSource.PlayOneShot(squashed);
+                break;
+
+            case "Death":
+                audioSource.PlayOneShot(death);
                 break;
 
             default:

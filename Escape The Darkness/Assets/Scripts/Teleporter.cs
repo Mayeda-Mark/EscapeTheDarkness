@@ -16,7 +16,7 @@ public class Teleporter : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W) && playerInZone || Input.GetButtonDown("Use") && playerInZone)
+        if (Input.GetKeyDown(KeyCode.W) && playerInZone)
         {
             SoundManager.PlaySound("Teleport");
             player.transform.position = teleportTarget.transform.position;

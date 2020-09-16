@@ -41,6 +41,12 @@ public class PermanentUI : MonoBehaviour
 
     private void Update()
     {
+        if (startCount == 0)
+        {
+            star1.alpha = .2f;
+            star2.alpha = .2f;
+            star3.alpha = .2f;
+        }
         if (startCount == 1)
         {
             star1.alpha = 1f;
@@ -57,7 +63,8 @@ public class PermanentUI : MonoBehaviour
 
     public void Reset()
     {
-        collectable = 0;
-        collectableTxt.text = collectable.ToString();
+        //collectable = 0;
+        //collectableTxt.text = collectable.ToString();
+        startCount = 0;        
     }
 }

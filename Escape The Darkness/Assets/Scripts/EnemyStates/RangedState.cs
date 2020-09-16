@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+//using System.Management.Instrumentation;
 using UnityEngine;
 
-public class RangedState : IEnemyState
+public class RangedState : IEnemyState 
 {
     private Enemy enemy;
     private PlayerController player;
@@ -19,12 +20,19 @@ public class RangedState : IEnemyState
         {
             enemy.Move();
 
+            enemy.MoveTowardsTarget();
+
             //enemy.transform.position = Vector2.MoveTowards(enemy.transform.position, player.transform.position, enemy.movementSpeed * Time.deltaTime);
         }
         else
         {
+            Debug.Log("Reset");
             //enemy.isFound = false;
+            enemy.movementSpeed = 0;
             enemy.transform.position = enemy.startPosition;
+            enemy.rb.velocity = new Vector2(0, 0);
+            enemy.patrolBar.SetMaxHealth(0);
+            enemy.idleBar.SetMaxHealth(0);
             enemy.ChangeState(new IdleState());
         }
     }
@@ -46,6 +54,6 @@ public class RangedState : IEnemyState
 
     public void OntriggerEnter(Collider2D _collision)
     {
-        
+    
     }
 }

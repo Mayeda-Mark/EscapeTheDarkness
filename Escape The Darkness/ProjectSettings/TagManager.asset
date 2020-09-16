@@ -10,6 +10,7 @@ TagManager:
   - Chest
   - Missile
   - Enemy
+  - Collectable
   layers:
   - Default
   - TransparentFX
@@ -32,8 +33,8 @@ TagManager:
   - LadderTopGround
   - EnemySight
   - SewerCeiling
-  - 
-  - 
+  - EnemyWayPoint
+  - Walls
   - 
   - 
   - 

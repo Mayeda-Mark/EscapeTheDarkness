@@ -11,7 +11,9 @@ public class IdleState : IEnemyState
 
     public void Enter(Enemy _enemy)
     {
-        
+        //enemy.transform.position = enemy.startPosition;
+        //enemy.idleBar.SetMaxHealth(0f);
+        //enemy.patrolBar.SetHealth(0);
         idleDuration = Random.Range(1, 10);
         this.enemy = _enemy;
 
@@ -19,6 +21,9 @@ public class IdleState : IEnemyState
         enemy.FieldOfView.SetViewDistance(8f);
 
         enemy.movementSpeed = 4;
+
+        //enemy.idleBar.enabled = true;
+        enemy.idleBar.SetMaxHealth(idleDuration);
     }
 
     public void Execute()
@@ -43,12 +48,19 @@ public class IdleState : IEnemyState
 
     private void Idle()
     {
+        
+        
         enemy.animationState = Enemy.AnimationState.IDLE;
         idleTimer += Time.deltaTime;
+        //idleTimer -= Time.deltaTime;
+        //CombtTextManager.MyInstance.CreateText(enemy.combatTxtPosition.position, idleTimer.ToString(), SCT_TYPE.HEAL, true);
+        enemy.idleBar.SetHealth(idleTimer);
 
         if (idleTimer >= idleDuration)
         {
-            enemy.ChangeState(new PatrolState());
+            //enemy.idleBar.enabled = false;
+            enemy.idleBar.SetMaxHealth(0f);
+            enemy.ChangeState(new PatrolState());            
         }
     }
 }

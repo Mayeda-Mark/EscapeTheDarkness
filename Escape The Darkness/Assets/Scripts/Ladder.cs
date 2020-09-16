@@ -23,6 +23,8 @@ public class Ladder : MonoBehaviour
             {
                 case LadderParts.TOP:
                     player.TopLadder = true;
+                    player.CanClimb = false;
+                    player.IsOnLadder = false;
 
                     //PESwitcherOff();
                     break;

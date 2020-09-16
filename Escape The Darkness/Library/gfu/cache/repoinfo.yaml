@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 1
-  lastUpdatedAtString: 2020-09-06T05:16:33.877-07:00
-  initializedAtString: 2020-09-06T05:16:33.877-07:00
+  lastUpdatedAtString: 2020-09-07T05:49:45.823-07:00
+  initializedAtString: 2020-09-07T05:49:45.823-07:00
   currentGitRemote:
     name: alt
     url: https://github.com/Mayeda-Mark/EscapeTheDarkness.git

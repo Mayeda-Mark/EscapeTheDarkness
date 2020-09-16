@@ -1,0 +1,313 @@
+fileFormatVersion: 2
+guid: 8ddda3033e4a6d949a9b2dd5aaa436a8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8707449050947110633
+    second: fox_idle_spriteSheet_0
+  - first:
+      213: 9156584373243732594
+    second: fox_idle_spriteSheet_1
+  - first:
+      213: -2022810770949172415
+    second: fox_idle_spriteSheet_2
+  - first:
+      213: 7778209835693297636
+    second: fox_idle_spriteSheet_3
+  - first:
+      213: 7387865162674494074
+    second: fox_idle_spriteSheet_4
+  - first:
+      213: -2750794614010584966
+    second: fox_idle_spriteSheet_5
+  - first:
+      213: -1376865722691034880
+    second: fox_idle_spriteSheet_6
+  - first:
+      213: 5125770032148358866
+    second: fox_idle_spriteSheet_7
+  - first:
+      213: -2448885520111061973
+    second: fox_idle_spriteSheet_8
+  - first:
+      213: 3565044827050372210
+    second: fox_idle_spriteSheet_9
+  - first:
+      213: -6542456984221272782
+    second: fox_idle_spriteSheet_10
+  - first:
+      213: -5852984875718426885
+    second: fox_idle_spriteSheet_11
+  - first:
+      213: 8550940641386152893
+    second: fox_idle_spriteSheet_12
+  - first:
+      213: 3329081339368454369
+    second: fox_idle_spriteSheet_13
+  - first:
+      213: 5273197320097722575
+    second: fox_idle_spriteSheet_14
+  - first:
+      213: 6537810225018432850
+    second: fox_idle_spriteSheet_15
+  - first:
+      213: 7740075809597745892
+    second: fox_idle_spriteSheet_16
+  - first:
+      213: -4601903926340511882
+    second: fox_idle_spriteSheet_17
+  - first:
+      213: 3394175810249998763
+    second: fox_idle_spriteSheet_18
+  - first:
+      213: -8512180011338079694
+    second: fox_idle_spriteSheet_19
+  - first:
+      213: -5040909900753668294
+    second: fox_idle_spriteSheet_20
+  - first:
+      213: 9157474497344996960
+    second: fox_idle_spriteSheet_21
+  - first:
+      213: -5956325251303368988
+    second: fox_idle_spriteSheet_22
+  - first:
+      213: 8246922851621959983
+    second: fox_idle_spriteSheet_23
+  - first:
+      213: 2611791392230010759
+    second: fox_idle_spriteSheet_24
+  - first:
+      213: 1889587874755816837
+    second: fox_idle_spriteSheet_25
+  - first:
+      213: 3764553518681879888
+    second: fox_idle_spriteSheet_26
+  - first:
+      213: -7806032313607852763
+    second: fox_idle_spriteSheet_27
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fox_idle_spriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 1
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7193c72e83de82780800000000000000
+      internalID: -8707449050947110633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fox_idle_spriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 1
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 272e51b49f8b21f70800000000000000
+      internalID: 9156584373243732594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fox_idle_spriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 1
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1439db532588de3e0800000000000000
+      internalID: -2022810770949172415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fox_idle_spriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 1
+        width: 25
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4efc2f482a0c1fb60800000000000000
+      internalID: 7778209835693297636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fox_idle_spriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 1
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7a52bd0938f68660800000000000000
+      internalID: 7387865162674494074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fox_idle_spriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 1
+        width: 25
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7067d57fd633d9d0800000000000000
+      internalID: -2750794614010584966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

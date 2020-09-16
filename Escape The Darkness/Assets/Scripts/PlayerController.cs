@@ -98,7 +98,10 @@ public class PlayerController : MonoBehaviour
     public bool BottomLadder { get => bottomLadder; set => bottomLadder = value; }
     public bool TopLadder { get => topLadder; set => topLadder = value; }
     public Ladder Ladder { get => ladder; set => ladder = value; }
+    public bool IsOnLadder { get => isOnLadder; set => isOnLadder = value; }
     #endregion
+
+    private bool isAlive = true;
 
     private void Start()
     {
@@ -123,7 +126,7 @@ public class PlayerController : MonoBehaviour
         //CheckJump();
         CheckIfCanJump();
         CheckInput();
-        //CheckDash();
+        CheckDash();
         //CheckKnockback();
         AnimationState();
         SetAnimation();
@@ -198,7 +201,7 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(Ladder.transform.position.x, rb.position.y);//Ladder
             rb.gravityScale = 0f;
         }
-        if (Input.GetButtonDown("Jump") && !isOnLadder)
+        if (Input.GetButtonDown("Jump") && !IsOnLadder && canJump)
         {
             state = State.FALL;
 
@@ -221,56 +224,59 @@ public class PlayerController : MonoBehaviour
         {
             state = State.CROUCH;
         }
-        //if (Input.GetButtonDown("Dash"))
-        //{
-        //    if (Time.time >= (lastDash + dashCoolDown))
-        //    {
-        //        AttemptToDash();
-        //    }
-        //}
-        //if (Input.GetKeyDown(KeyCode.Alpha0))
-        //{
-        //    if (Time.time >= (lastDash + dashCoolDown))
-        //    {
-        //        AttemptToDash();
-        //    }
-        //}
+
+
+
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            if (Time.time >= (lastDash + dashCoolDown))
+            {
+                AttemptToDash();
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            if (Time.time >= (lastDash + dashCoolDown))
+            {
+                AttemptToDash();
+            }
+        }
     }
 
-    //private void AttemptToDash()
-    //{
-    //    isDashing = true;
-    //    dashTimeLeft = dashTime;
-    //    lastDash = Time.time;
-    //    PlayerAfterImagePool.Instance.GetFromPool();
-    //    lastDashImageXpos = transform.position.x;
-    //    SoundManager.PlaySound("Sprint");
-    //}
+    private void AttemptToDash()
+    {
+        isDashing = true;
+        dashTimeLeft = dashTime;
+        lastDash = Time.time;
+        PlayerAfterImagePool.Instance.GetFromPool();
+        lastDashImageXpos = transform.position.x;
+        SoundManager.PlaySound("Sprint");
+    }
 
-    //private void CheckDash()
-    //{
-    //    if (isDashing)
-    //    {
-    //        if (dashTimeLeft > 0)
-    //        {
-    //            canMove = false;
-    //            canFlip = false;
-    //            rb.velocity = new Vector2(dashSpeed * facingDirection, 0);
-    //            dashTimeLeft -= Time.deltaTime;
-    //            if (Mathf.Abs(transform.position.x - lastDashImageXpos) > distanceBetweenImages)
-    //            {
-    //                PlayerAfterImagePool.Instance.GetFromPool();
-    //                lastDashImageXpos = transform.position.x;
-    //            }
-    //        }
-    //        if (dashTimeLeft <= 0)
-    //        {
-    //            isDashing = false;
-    //            canMove = true;
-    //            canFlip = true;
-    //        }
-    //    }
-    //}
+    private void CheckDash()
+    {
+        if (isDashing)
+        {
+            if (dashTimeLeft > 0)
+            {
+                canMove = false;
+                canFlip = false;
+                rb.velocity = new Vector2(dashSpeed * facingDirection, 0);
+                dashTimeLeft -= Time.deltaTime;
+                if (Mathf.Abs(transform.position.x - lastDashImageXpos) > distanceBetweenImages)
+                {
+                    PlayerAfterImagePool.Instance.GetFromPool();
+                    lastDashImageXpos = transform.position.x;
+                }
+            }
+            if (dashTimeLeft <= 0)
+            {
+                isDashing = false;
+                canMove = true;
+                canFlip = true;
+            }
+        }
+    }
 
     private void AnimationState()
     {
@@ -324,8 +330,9 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
-        if (canJump)
+        if (canJump && isAlive)
         {
+            rb.gravityScale = naturalGravity;
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             amountOfJumpsLeft--;
             jumpTimer = 0;
@@ -344,10 +351,8 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Climb()
-    {
-        
-
-        isOnLadder = true;
+    {       
+        IsOnLadder = true;
         verMovementDirection = Input.GetAxis("Vertical");
         //Climbing up
         if (verMovementDirection > 0.1f && !TopLadder)
@@ -372,9 +377,8 @@ public class PlayerController : MonoBehaviour
         {
             //pe.rotationalOffset = 0f;
             ladder.PESwitcherOff();
-
+            IsOnLadder = false;////////
             state = State.IDLE;
-            isOnLadder = false;
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             rb.gravityScale = naturalGravity;
             anim.speed = 1f;
@@ -382,12 +386,13 @@ public class PlayerController : MonoBehaviour
         //Jump off the ladder
         else if (Input.GetButtonDown("Jump"))
         {
-            isOnLadder = false;
+            IsOnLadder = false;
+            rb.gravityScale = naturalGravity;
             rb.constraints = RigidbodyConstraints2D.None;
             CanClimb = false;
             anim.speed = 1f;
             Jump();
-            rb.gravityScale = naturalGravity;
+            
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             return;
         }
@@ -399,26 +404,25 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Enemy"))
-    //    {
-    //        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    //    }
-    //}
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            //SoundManager.PlaySound("Squashed");
+            isAlive = false;
+            canJump = false;
+            canMove = false;
+            
+            coll.enabled = false;
+            sr.enabled = false;
+            rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+            
             deathParticleSystem.Play();
+            SoundManager.PlaySound("Death");
+            CameraShake.Instance.ShakeCamera(5f, 0.3f);
             //Instantiate(jumpEffect, groundCheck.transform.position, jumpEffect.transform.rotation
             //Instantiate(deathParticleSystem, GetPosition(), Quaternion.Euler(-90, 0, 0));
             //this.gameObject.SetActive(false);
-            coll.enabled = false;
-            sr.enabled = false;
-            rb.constraints = RigidbodyConstraints2D.FreezePositionY| RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+            
             StartCoroutine(Death());
         }
     }
@@ -427,10 +431,14 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        PermanentUI.perm.Reset();
         sr.enabled = true;
         coll.enabled = true;
         rb.constraints = RigidbodyConstraints2D.None;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        canJump = true;
+        canMove = true;
+        isAlive = true;
     }
 
     public Vector3 GetPosition()

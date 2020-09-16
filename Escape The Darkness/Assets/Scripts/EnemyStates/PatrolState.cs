@@ -11,11 +11,16 @@ public class PatrolState : IEnemyState
 
     public void Enter(Enemy _enemy)
     {
+        //enemy.patrolBar.SetMaxHealth(0f);
+        //enemy.idleBar.SetHealth(0);
         patrolDuration = Random.Range(1, 10);
         this.enemy = _enemy;
 
         enemy.FieldOfView.SetFoV(40f);
         enemy.FieldOfView.SetViewDistance(15f);
+
+        //enemy.patrolBar.enabled = true;
+        enemy.patrolBar.SetMaxHealth(patrolDuration);
     }
 
     public void Execute()
@@ -44,12 +49,17 @@ public class PatrolState : IEnemyState
 
     private void Patrol()
     {
+        
         enemy.animationState = Enemy.AnimationState.RUN;
         patrolTimer += Time.deltaTime;
+        //patrolTimer += Time.deltaTime;
+        enemy.patrolBar.SetHealth(patrolTimer);
 
-        if (patrolTimer >= patrolDuration)
+        if (patrolTimer >=patrolDuration)
         {
-            enemy.ChangeState(new IdleState());
+            //enemy.patrolBar.enabled = false;
+            enemy.patrolBar.SetMaxHealth(0f);
+            enemy.ChangeState(new IdleState());           
         }
     }
 }

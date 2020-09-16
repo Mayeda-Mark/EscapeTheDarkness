@@ -4,6 +4,7 @@ public class EnvirnmentMovement : MonoBehaviour
 {
     [SerializeField] private ParticleSystem hideEffect = default;
     [SerializeField] private PlayerController player;
+    [SerializeField] private GameObject playerHolder;
 
     private bool isHidable = false;
     private bool isHidding = false;
@@ -19,14 +20,18 @@ public class EnvirnmentMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W) && isHidable)
         {
+            //Instantiate(playerHolder, player.transform);
             player.gameObject.SetActive(false);
             //anim.SetTrigger("move");
             hideEffect.Play();
+            SoundManager.PlaySound("CoinPickUp");
             isHidding = true;
+            
         }
         if (Input.GetKeyDown(KeyCode.S) && isHidding)
         {
             player.gameObject.SetActive(true);
+            SoundManager.PlaySound("CoinPickUp");
             //anim.SetTrigger("move");
             hideEffect.Play();
         }
