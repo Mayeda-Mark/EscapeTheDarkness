@@ -11,6 +11,8 @@ TagManager:
   - Missile
   - Enemy
   - Collectable
+  - FallingBlock
+  - MovingPlatform
   layers:
   - Default
   - TransparentFX
@@ -35,7 +37,7 @@ TagManager:
   - SewerCeiling
   - EnemyWayPoint
   - Walls
-  - 
+  - Middleground
   - 
   - 
   - 
@@ -47,6 +49,9 @@ TagManager:
   m_SortingLayers:
   - name: Parrallax
     uniqueID: 2984464095
+    locked: 0
+  - name: Middleground
+    uniqueID: 2716998557
     locked: 0
   - name: Ground
     uniqueID: 3476480463
