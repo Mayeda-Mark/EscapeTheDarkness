@@ -89,6 +89,7 @@
     <Compile Include="Assets\Scripts\Brick.cs" />
     <Compile Include="Assets\Scripts\CameraShake.cs" />
     <Compile Include="Assets\Scripts\Chest.cs" />
+    <Compile Include="Assets\Scripts\CircularMotion.cs" />
     <Compile Include="Assets\Scripts\CombatText.cs" />
     <Compile Include="Assets\Scripts\CombtTextManager.cs" />
     <Compile Include="Assets\Scripts\CreepingDarkness.cs" />
@@ -116,6 +117,7 @@
     <Compile Include="Assets\Scripts\SceneLoader.cs" />
     <Compile Include="Assets\Scripts\SignTrigger.cs" />
     <Compile Include="Assets\Scripts\SoundManager.cs" />
+    <Compile Include="Assets\Scripts\SpinningTrap.cs" />
     <Compile Include="Assets\Scripts\Star.cs" />
     <Compile Include="Assets\Scripts\Teleporter.cs" />
     <Compile Include="Assets\Scripts\Tooltip.cs" />
