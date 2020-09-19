@@ -368,7 +368,7 @@ public class PlayerController : MonoBehaviour
         {
             //pe.rotationalOffset = 180f;
             ladder.PESwitcherOn();
-
+            
             rb.velocity = new Vector2(0f, verMovementDirection * climbSpeed);
             anim.speed = 1f;
         }

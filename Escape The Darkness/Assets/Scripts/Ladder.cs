@@ -8,8 +8,6 @@ public class Ladder : MonoBehaviour
     [SerializeField] LadderParts part = LadderParts.MIDDLE;
     [SerializeField] private Collider2D coll = default;
     [SerializeField] private LayerMask whatIsTop = default;
-
-    //[SerializeField] private PlayerController player;
     public PlatformEffector2D pe = default;
     #endregion
 
@@ -23,23 +21,15 @@ public class Ladder : MonoBehaviour
             {
                 case LadderParts.TOP:
                     player.TopLadder = true;
-                    player.CanClimb = false;
-                    player.IsOnLadder = false;
-
-                    //PESwitcherOff();
                     break;
 
                 case LadderParts.MIDDLE:
                     player.CanClimb = true;
                     player.Ladder = this;//Ladder 
-
-                    //PESwitcherOn();
                     break;
 
                 case LadderParts.BOTTOM:
                     player.BottomLadder = true;
-
-                    //PESwitcherOff();
                     break;
 
                 default:
@@ -58,21 +48,14 @@ public class Ladder : MonoBehaviour
             {
                 case LadderParts.MIDDLE:
                     player.CanClimb = false;
-
-                    //PESwitcherOn();
-
                     break;
 
                 case LadderParts.BOTTOM:
                     player.BottomLadder = false;
-
-                    //PESwitcherOff();
                     break;
 
                 case LadderParts.TOP:
                     player.TopLadder = false;
-
-                    //PESwitcherOn();
                     break;
 
                 default:

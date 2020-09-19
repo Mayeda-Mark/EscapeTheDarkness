@@ -337,7 +337,7 @@ MonoBehaviour:
   rayCastPoistion: {fileID: 1588860221691147293}
   target:
     serializedVersion: 2
-    m_Bits: 2147484416
+    m_Bits: 2151678720
   combatTxtPosition: {fileID: 4145637477119232532}
   patrolBar: {fileID: 3918782005754266955}
   idleBar: {fileID: 4145637477171737968}

@@ -227,7 +227,7 @@ MonoBehaviour:
   rayCastPoistion: {fileID: 5605613242831636358}
   target:
     serializedVersion: 2
-    m_Bits: 2147484416
+    m_Bits: 2151678720
   combatTxtPosition: {fileID: 7084060154017069455}
   patrolBar: {fileID: 7900913569342928592}
   idleBar: {fileID: 7084060154069288683}
@@ -246,7 +246,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5605613242131113481
 Transform:
   m_ObjectHideFlags: 0
@@ -566,8 +566,8 @@ RectTransform:
   m_Father: {fileID: 7084060154069288682}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -811,8 +811,8 @@ RectTransform:
   m_Father: {fileID: 7900913569342928593}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
